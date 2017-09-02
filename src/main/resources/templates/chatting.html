@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" 
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></meta>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"></link>
+<link rel="stylesheet" th:href="@{/css/chat.css}"></link>
+<script th:src="@{/webjars/jquery/3.1.0/jquery.min.js}"></script>
+<title>Hello WebSocket</title>
+</head>
+<body>
+<noscript>
+	<h2 style="color: #ff0000">
+		Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. 
+		Please enable Javascript and reload this page!
+    </h2>
+</noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="name">What is your name?</label>
+                    <input type="text" id="name" class="form-control" placeholder="Your name here..."></input>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="roomName">What is Room name?</label>
+                    <input type="text" id="roomName" class="form-control" placeholder="Your room here..."></input>
+                </div>
+            </form>
+        </div>
+        <br/>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+             <div class="chat-panel panel panel-default">
+					<div class="panel-heading">
+						<i class="fa fa-comments fa-fw"></i> Chat
+					</div>
+					<!-- /.panel-heading -->
+					<div class="panel-body">
+						<ul class="chat" id="chat">
+						</ul>
+					</div>
+					<!-- /.panel-body -->
+					<div class="panel-footer">
+						<form class="form">
+							<div class="form-group">
+								<div class="input-group">
+									<input id="btn-input" type="text" class="form-control input-sm"
+										placeholder="Type your message here..." autocomplete="off"></input>
+										<span class="input-group-btn">
+											<button class="btn btn-warning btn-sm" id="btn-chat" type="submit">
+											Send
+											</button>
+										</span>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- /.panel-footer -->
+				</div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/webjars/sockjs-client/1.0.2/sockjs.min.js}"></script>
+<script th:src="@{/webjars/stomp-websocket/2.3.3/stomp.min.js}"></script>
+<script th:src="@{/js/chat.js}"></script>
+<script th:src="@{/js/app2js.js}"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.6.RELEASE'
+		javaVersion = '1.8'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'chatter'
+    version = '1.0.2-SNAPSHOT'
+}
+
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-websocket')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile('net.sourceforge.nekohtml:nekohtml:1.9.22')
+	compile('org.webjars:webjars-locator')
+	compile('org.webjars:sockjs-client:1.0.2')
+	compile('org.webjars:stomp-websocket:2.3.3')
+	compile('org.webjars:bootstrap:3.3.7')
+	compile('org.webjars:jquery:3.1.0')
+	compile('com.fasterxml.jackson.core:jackson-databind')
+	compile('mysql:mysql-connector-java')
+	compile('org.projectlombok:lombok')
+	runtime('com.h2database:h2')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
