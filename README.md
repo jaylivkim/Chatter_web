@@ -43,5 +43,6 @@ Chatter Project 중 대화 내용 전달을 위한 웹 채팅 서버
 
 
 ## 개발 진행 상황
-- 17.08.26 진행상황 update : Spring Security를 활용해서 간단한 로그인 & 회원가입 기능 구현.
+- 17.08.26 진행상황 update 1.Spring Security를 활용해서 간단한 로그인 & 회원가입 기능 구현.
+- 17.08.26 진행상황 update 2.Maven -> Gradle로 변환 완료.
 - 프로젝트의 프로토타입을 위한 최소한의 기능들을 구현 완료한 상태.
